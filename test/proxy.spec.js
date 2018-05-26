@@ -31,13 +31,13 @@ describe('test proxy func', function() {
         console.log('start app1 listen port 8001');
 
         // create another server
-        app2 = new koa();
-        app2.use(route.get('/api/server.js', async function(context, next){
+        let s2 = new koa();
+        s2.use(route.get('/api/server.js', async function(context, next){
             context.body = 'ok';
                     
             await next();
         }));
-        app2.listen(8002);
+        app2 = s2.listen(8002);
         console.log('start app2 listen port 8002');
     });
 
@@ -70,4 +70,8 @@ describe('test proxy func', function() {
         });
     });
 
+    after(function () {
+        app.close();
+        app2.close();
+    });
 });
