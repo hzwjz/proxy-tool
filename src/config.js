@@ -17,7 +17,7 @@ module.exports = {
         "rules" : [
             "^\/api"
         ],
-        "host" : "http://www.baidu.com",
+        "host" : "http://localhost:8003",
         "queries" : {
             "format": "json"
         },
