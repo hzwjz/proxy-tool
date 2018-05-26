@@ -7,8 +7,9 @@
     "proxy-tool": "./bin/start.js"
   },
   "scripts": {
-    "test": "test",
-    "starttest": "node bin/start.js -c ./config.example.js"
+    "test": "mocha test/*.js",
+    "start-default": "node bin/start.js",
+    "start-custom": "node bin/start.js -c ./config.example.js"
   },
   "keywords": [
     "http",
@@ -29,6 +30,8 @@
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "supertest": "^3.1.0"
   }
 }

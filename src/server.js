@@ -39,6 +39,8 @@ class Server {
         if (!this._server) {
             console.log('start server at port:' + this._config.port);
             this._server = this._app.listen(this._config.port);
+
+            return this._server;
         }
     }
 
