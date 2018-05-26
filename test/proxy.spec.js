@@ -27,8 +27,8 @@ describe('test proxy func', function() {
         })).start();
     });
 
-    describe('test static server', function(done) {
-        it('should return js file', function() {
+    describe('test static server', function() {
+        it('should return js file', function(done) {
             request(app)
                 .get('/src/server.js')
                 .expect('Content-Type', /application\/javascript/)
@@ -40,8 +40,8 @@ describe('test proxy func', function() {
         });
     });
 
-    describe('test simple get method request by proxy', function(done) {
-        it('should return index page of baidu by proxy request', function() {
+    describe('test simple get method request by proxy', function() {
+        it('should return index page of baidu by proxy request', function(done) {
             request(app)
                 .get('/api/server.js')
                 .expect('Content-Type', /text\/html/)
